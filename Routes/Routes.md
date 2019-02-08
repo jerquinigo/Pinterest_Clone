@@ -6,10 +6,9 @@ Routes on the FrontEnd
 "/login" - form
 "/users/username" -userAccount/DisplayBoards
 "/users/followers" -display Followers
-"/users/user_collection/:id" - display one board
+"/users/following" - display your followee
+"/users/username/user_collection/:id" - display one board
 "/users/photos/:id" - display one photo
-"/users/followers/:id" - display one follower
-"/users/notification/:id" - display one notification
-"/users/pins" - display all tables outside their tables
-"/users/tries" - display recommended pins
+"/users/pins" - display all photos outside their tables
+"/users/tries" - display recommended photos
 "users/topics" - show categories
