@@ -24,7 +24,8 @@ users_id INT REFERENCES users(id),
 reply
 id SERIAL PRIMARY KEY
 users_id INT REFERENCES users(id),
-body TEXT NOT NULL
+body TEXT NOT NULL,
+session_token VARCHAR NULL NOT FALSE
 
 likes
 id SERIAL PRIMARY KEY
