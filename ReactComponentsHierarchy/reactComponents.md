@@ -26,7 +26,6 @@ LoginImage component
 
 ***************************
 
-# userPage
 Display Board Component
 -board title
 -picture count
@@ -40,15 +39,7 @@ userDisplayAndOption Component - show the user profile picture and buttons
 -tries button
 -topics button
 
-
 *****************************
-# following Page Clicked
-
-Following Component - will display the following feed
--trending button
--geek button
--art button
--more drop down menu
 
 DisplayFollowerBoard - will display userAccounts to follow
 -username
