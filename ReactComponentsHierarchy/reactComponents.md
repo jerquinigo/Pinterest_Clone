@@ -7,7 +7,8 @@
 *************************
 (SIGN IN PAGE)
 * LoginForm
-* DisplayImageComponent
+* DisplayPics
+* DisplayPic
 *************************
 (HOMEPAGE)
 * NAVBAR
@@ -18,4 +19,12 @@
 * UserButtonComponent
 * DisplayUserProfile
 * Add/edit pin/board
-* DisplayImageComponent
+* DisplayPics
+* DisplayPic
+
+
+
+
+//notes
+* DisplayPics - display the list of images
+* DisplayPic - display single image that is mapped
