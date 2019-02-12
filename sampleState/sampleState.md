@@ -3,30 +3,39 @@
 ```js
 state = {
   users:{
-  username: jerquinigo,
-  email: jerquinigo@test.com
-  }
-followers: {
-  follower_id: 2,
-  followee_id: 3,  
+    1: {
+    id: 1,
+    name: Daniel Norris,
+    username: Dnorris,
+    email: Dnorris@test.com
+  },
 
-  }
+    2: {
+      id: 2
+      name: Jonathan,
+      username: jerquinigo,
+      email: jerquinigo@test.com
+    }
 
-likes:{
-  user_id: 2,
-  photo_master_table_id: 2,
-}
-
-comments: {
-  user_id: 2,
-  body: "this is a great picture that is on your board",
-  likes_id: 3
-}
-
+  },
 posts:{
-  url: "https://maroon-prod.s3.amazonaws.com/media/CACHE/images/photos/2018/11/01/Screen-Shot-2018-05-14-at-3_02_38-PM/2ba47c4dee77137dceb949126fa0755c.jpg",
+    12: {
+      id: 12
+  user_id:1,
 title: "Joji's new Album",
-category: music
+description: "Joji first official album",
+category: "music",
+imgUrl: "https://maroon-prod.s3.amazonaws.com/media/CACHE/images/photos/2018/11/01/Screen-Shot-2018-05-14-at-3_02_38-PM/2ba47c4dee77137dceb949126fa0755c.jpg",
+  }
+
+  13: {
+      id: 13
+    user_id:2,
+  title: "Phum Vimphurit photo",
+  description: "Lead singer for the band",
+  category: "music",
+  imgUrl: "https://cdn.filestackcontent.com/4d5cQt27SqVaW1g1o50W/convert?cache=true&crop=0%2C226%2C2040%2C1020",
+  }
 }
 
 }

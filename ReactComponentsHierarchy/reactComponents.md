@@ -36,8 +36,7 @@ userDisplayAndOption Component - show the user profile picture and buttons
 -userImage url
 -boards button
 -pins button
--tries button
--topics button
+
 
 *****************************
 

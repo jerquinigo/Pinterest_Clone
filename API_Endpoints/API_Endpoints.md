@@ -1,36 +1,46 @@
 # API ENDPOINTS
 
 
-
+## log in
 * GET. "/api/session" - Log in
 
 * DELETE "/api/session" - Log out
 
+## users
+
+GET. "/API/categories/photos" - (display all the photos on the home page after login)
+
 * GET."/API/username/" - (get user account)
 
-* GET."/API/followers/" - (get all followers)
+
+* DELETE."/API/settings/delete_user/" -(delete user account)
+
+* PATCH. "/API/settings/edit_user/" -(edit single user)
+
+* POST. "/API/settings/create_user" - (create single user)
+
+
+
+## Boards
 
 * GET."/API/users_collection/:id/" - (display one board)
+* POST."/API/photoPins" - (create one photo)
 
-* GET."/API/photos/:id/" - (display one photo)
+* POST."/API/boards" - (create one board)
 
-* DELETE."/API/photos/:id" -(delete one photo)
+* DELETE."/API/photoPins/:id" -(delete one photo)
 
-* POST."/API/followers/:id/" - (follow a user)
+* PATCH."/API/photoPins/:id" -(edit one pin)
 
-* DELETE."/API/followers/:id" - (delete following)
+* PATCH. "/API/boards/:id" - (edit one board)
 
-* POST."/API/comments/:id/" - (post a comment)
+* DELETE. "/API/board/:id" - (delete one board)
 
-* DELETE."/API/comments/:id/" - (delete a comment)
+* GET."/API/photoPins/:id/" - (get one photo)
 
-* POST."/API/likes/:id/" - (post a like)
+* GET."/API/users/:id/photos/" - (get all photos)
 
-* DELETE."/API/likes/:id/" - (delete a like)
-
-* GET."/API/photos/" - (display all photos)
-
-* GET."/API/photo_master_table/categories/" - (displays recommended)(this is the tries path)
+* GET."/API/photoTable/search/:query" - (Search all categories based on users queries)
 
 * GET."/API/topics/" - (shows categories)
 

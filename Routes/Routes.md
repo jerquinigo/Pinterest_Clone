@@ -7,19 +7,15 @@
 
 * "/login" - form
 
-* "/users/username" -userAccount/DisplayBoards
+* "/username" -userAccount/DisplayBoards
 
-* "/users/followers" -display Followers
+* "/username/user_collection/:board_id" - display one board
 
-* "/users/following" - display your followee
+* "/photos/:id" - display one photo
 
-* "/users/username/user_collection/:id" - display one board
-
-* "/users/photos/:id" - display one photo
-
-* "/users/pins" - display all photos outside
+* "/username/photos" - display all photos outside
  their tables
 
-* "/users/tries" - display recommended photos
+ * "/settings/delete_user/" -delete user userAccount
 
-* "users/topics" - show categories
+ * "/settings/edit_user/" -edit single user
