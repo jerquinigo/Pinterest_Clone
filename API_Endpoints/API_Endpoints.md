@@ -13,11 +13,11 @@ GET. "/API/categories/photos" - (display all the photos on the home page after l
 * GET."/API/username/" - (get user account)
 
 
-* DELETE."/API/settings/delete_user/" -(delete user account)
+* DELETE."/API/users/:id/" -(delete user account)
 
-* PATCH. "/API/settings/edit_user/" -(edit single user)
+* PATCH. "/API/users/:id/" -(edit single user)
 
-* POST. "/API/settings/create_user" - (create single user)
+* POST. "/API/users/" - (create single user)
 
 
 

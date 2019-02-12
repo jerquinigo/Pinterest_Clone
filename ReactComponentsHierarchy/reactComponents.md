@@ -1,46 +1,21 @@
 # React Components Hierarchy
----------------------------------
-This will be on top of every Webpage
-NAVBAR component
-* logo home icon
-* searchbox
-* home button
-* following button
-* username button/icon
-* messages button
-* notifications button
-* more dropdown menu
 *************************
+(SIGN UP PAGE)
+* SignUpForm
+* ButtonsSignUpComponent
 
-***************************
-# Sign In page
-
-LoginPageForm Component
--email input
--create password input
--age input
--submit button
-
-LoginImage component
--url
-
-***************************
-
-Display Board Component
--board title
--picture count
--edit button
-- url images
-
-userDisplayAndOption Component - show the user profile picture and buttons
--userImage url
--boards button
--pins button
-
-
-*****************************
-
-DisplayFollowerBoard - will display userAccounts to follow
--username
--follow button
--url images
+*************************
+(SIGN IN PAGE)
+* LoginForm
+* DisplayImageComponent
+*************************
+(HOMEPAGE)
+* NAVBAR
+* DisplayImageComponent
+**************************
+(USERACCOUNT)
+* NAVBAR
+* UserButtonComponent
+* DisplayUserProfile
+* Add/edit pin/board
+* DisplayImageComponent

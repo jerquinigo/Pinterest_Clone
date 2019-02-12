@@ -45,3 +45,10 @@ phase 5
 
 phase 5 time(3 days)
 * (SEARCH FEATURE,SHOW ALL PHOTOS) Will work on the search feature that will work in the backend by searching categories in the database. The front end will present the users search on page as photoPins. user will be able to add pins to their board
+
+
+## Bonus (TBD)
+* add followers, followees
+* comments
+* likes
+* notifications
