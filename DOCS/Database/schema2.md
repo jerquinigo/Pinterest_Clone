@@ -4,8 +4,7 @@
 column name| data type | details
 -----------|-----------|-----------
 id         |  integer  | SERIAL PRIMARY KEY
-firstName  |  string   | NOT NULL
-lastName   |  string   | NOT NULL
+name       |  string   | NOT NULL
 username   |  string   | NOT NULL
 email      |  string   | NOT NULL
 profile_pic_url | string | optional input
