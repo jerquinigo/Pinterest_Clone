@@ -1,11 +1,9 @@
-import { connect } from "react-redux";
-import Home from "./Home";
-import { fetchAllPins } from "../Redux/actions/actionPins.js";
-
+import { connect } from 'react-redux';
+import Home from '../components/Home';
+import { fetchAllPins } from "../actions/actionPins.js";
 const mapStateToProps = state => {
-  // debugger;
   return {
-    pins: state.pins
+    state: state.pins
   };
 };
 
@@ -16,6 +14,4 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Home);
+  mapStateToProps, mapDispatchToProps)(Home);

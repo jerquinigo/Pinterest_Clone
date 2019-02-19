@@ -1,34 +1,23 @@
-import React, {Component} from 'react';
-import NavBar from './NavBar.js'
+import React, { Component } from "react";
+import NavBar from "./NavBar.js";
+import AllPinsList from "./AllPinsList.js";
 // import axios from 'axios'
 
-
-class Home extends Component{
-  // constructor(){
-  //   super()
-  // }
-
-
+class Home extends Component {
   componentDidMount() {
-// axios.get('/api/pins')
-// .then(response => {
-//   debugger
-// })
-// this.props.fetchAllPins()
-   }
+    this.props.fetchAllPins();
+  }
 
+  render() {
+    console.log(this.props, "redux");
 
-
-  render(){
-    console.log(this.props, "redux")
-    return(
+    return (
       <div className="homepage">
-        <NavBar/ >
-      this is the home page
+        <NavBar />
+        <AllPinsList pins={this.props.pins} />
       </div>
-    )
+    );
   }
 }
-
 
 export default Home;

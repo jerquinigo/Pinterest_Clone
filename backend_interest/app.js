@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //the routes to use
 app.use('/', indexRouter);
 app.use('/api/users', usersRouter);
-app.use('/api/pins', photoRouter);
+app.use('/api/pins/', photoRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

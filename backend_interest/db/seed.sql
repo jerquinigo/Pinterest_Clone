@@ -12,18 +12,18 @@ profile_pic_url VARCHAR
 );
 
 
-CREATE TABLE user_board_collection(
+CREATE TABLE boards(
   id SERIAL PRIMARY KEY,
   user_id INTEGER REFERENCES users(id),
   title VARCHAR NOT NULL
 );
 
-CREATE TABLE photo_master_table(
+CREATE TABLE pins(
   id SERIAL PRIMARY KEY,
   title VARCHAR NOT NULL,
   description CHARACTER(100) NOT NULL,
   category VARCHAR NOT NULL,
   imgUrl VARCHAR NOT NULL,
-  user_id INTEGER REFERENCES users(id),
-  user_board_id INTEGER REFERENCES user_board_collection(id)
+  user_board_id INTEGER REFERENCES boards(id),
+  user_id INTEGER REFERENCES users(id)
 )
