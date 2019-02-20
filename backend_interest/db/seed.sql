@@ -6,6 +6,7 @@ CREATE DATABASE interest;
 CREATE TABLE users(
   id SERIAL PRIMARY KEY,
 name VARCHAR NOT NULL,
+password_digest VARCHAR NOT NULL,
 username VARCHAR NOT NULL,
 email VARCHAR NOT NULL,
 profile_pic_url VARCHAR

@@ -1,17 +1,18 @@
 import React from "react";
 
-const AllPinsList = props => {
-console.log(props)
+export const AllPinsList = props => {
+  console.log(props, "in the functional");
+  // return props.pins.map((pin, i) => {
+  //   console.log(pin.imgurl)
+  // });
+  return null;
 
-let images;
-// images= props.pins.map(pin => {
-  return(
-    <div className="allPinsListPage">
-
-    </div>
-  );
-// })
 
 };
 
-export default AllPinsList;
+
+// return (
+//   <div>
+//     <img src={pin.imgurl} alt="" />
+//   </div>
+// );

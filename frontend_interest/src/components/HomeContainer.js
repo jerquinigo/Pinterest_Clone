@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import Home from '../components/Home';
+import Home from './Home';
 import { fetchAllPins } from "../actions/actionPins.js";
 const mapStateToProps = state => {
   return {
-    state: state.pins
+    pins: state.pins
   };
 };
 

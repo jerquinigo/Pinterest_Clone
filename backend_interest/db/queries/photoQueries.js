@@ -29,7 +29,10 @@ const getSinglePhoto = (req,res,next) => {
   .catch(err => next(err));
 }
 
-const getAllPhotosForAUser = (req,res,next) => {
+const getAllPhotosForAUser =
+// select * from pins where user_id = $1
+// select * from pins where user_board_id = $1
+ (req,res,next) => {
   let userId = parseInt(req.params.id);
   db.any("select pins.imgurl, pins.user_id from pins JOIN boards ON pins.user_id=boards.user_id WHERE user_board_id=$1", [userId])
   .then(pin => {
