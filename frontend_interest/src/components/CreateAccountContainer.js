@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import CreateAccount from './CreateAccount.js'
 import {fetchAllPins} from '../actions/actionLogInPins.js';
-import LoginCreateAccountSwitch from './LoginCreateAccountSwitch.js'
+// import LoginCreateAccountSwitch from './LoginCreateAccountSwitch.js'
 const mapStateToProps = (state) => {
   // debugger
   return {
@@ -15,6 +15,6 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginCreateAccountSwitch)
+// export default connect(mapStateToProps, mapDispatchToProps)(CreateAccount)
 
 //originally CreateAccount was connected

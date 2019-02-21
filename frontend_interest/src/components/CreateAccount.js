@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Login from './Login.js'
+import Login from "./Login.js";
 import logo from "../frontendResources/InterestHeartlogo.png";
 
 import "../css/CreateAccount.css";
@@ -16,19 +16,7 @@ class CreateAccount extends Component {
     };
   }
 
-  componentDidMount() {
-    this.props.fetchAllPins();
-  }
 
-  displayPins = () => {
-    return this.props.loginPins.map(pin => {
-      return (
-        <div key={pin.id} className="loginImageDiv">
-          <img className="loginImages" src={pin.imgurl} alt="" />
-        </div>
-      );
-    });
-  };
 
   handleChange = event => {
     this.setState({
@@ -36,22 +24,17 @@ class CreateAccount extends Component {
     });
   };
 
-
   onSubmit = event => {
     event.preventDefault();
   };
 
   render() {
-    console.log(this.state)
+    console.log(this.state);
     console.log(this.props, "in the account");
-    if(this.state.buttonClicked === false){
-
     return (
       <div className="createAccountPage">
-        <div className="parentLogInImageDiv">{this.displayPins()}</div>
         <div className="transparentPage">
 
-          <button onClick={this.props.toggleForm}className="loginButton">Log In</button>
           <div className="centerForm">
             <div className="formStyleDiv">
               <div className="logoDiv">
@@ -64,7 +47,6 @@ class CreateAccount extends Component {
               <div className="formContainer">
                 <div className="formDiv">
                   <form>
-
                     <br />
                     <input
                       onChange={this.handleChange}
@@ -107,19 +89,14 @@ class CreateAccount extends Component {
           </div>
         </div>
       </div>
-    )
-  } // if statement
-  else if(this.state.buttonClicked === true){
-    return (
-      <div>
-        hello world
-        <Login/>
-      </div>
-    )
-  }
+    );
   }
 }
 
+        // <div className="parentLogInImageDiv">{this.displayPins()}</div>
 
 
+        // <button onClick={this.props.toggleForm} className="loginButton">
+        //   Log In
+        // </button>
 export default CreateAccount;

@@ -5,7 +5,7 @@ class Login extends Component {
   render() {
     return (
       <div className="LoginPage">
-      <button className="signUp">Sign up</button>
+
       <img src={logo} alt=""/>
       <h3>Log in to see more</h3>
       <h3>Access Interest photos and ideas</h3>
@@ -21,5 +21,7 @@ class Login extends Component {
     );
   }
 }
+
+  // <button className="signUp">Sign up</button>
 
 export default Login;
