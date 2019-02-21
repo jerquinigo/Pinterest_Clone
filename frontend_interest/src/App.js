@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import {Route} from 'react-router-dom';
 import HomeContainer from './components/HomeContainer.js'
-
-// import CreateAccountContainer from './components/CreateAccountContainer.js'
-// import CreateAccount from './components/CreateAccount.js'
-// import Login from './components/Login.js'
 import UserAuthContainer from './components/UserAuthContainer.js'
+import Auth from './Utils/utilAuth.js'
+import PrivateRoute from './Utils/utilAuthRouting.js'
 import './App.css';
 
 class App extends Component {

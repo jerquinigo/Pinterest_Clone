@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CreateAccount from "./CreateAccount.js";
 import Login from "./Login.js";
+import "../css/userAuth.css"
 
 class UserAuth extends Component {
   constructor(props) {
@@ -34,12 +35,13 @@ console.log(this.props, "check")
 
         {!this.props.toggle ?
           <div>
-            <button onClick={this.props.toggleForm}>Sign up test</button>
+            <button onClick={this.props.toggleForm} className="authToggleButton">Log in</button>
         <CreateAccount />
         </div>
         :
         <div>
-          <button onClick={this.props.toggleForm}>Log in test</button>
+          <button onClick={this.props.toggleForm}
+            className="authToggleButton">Sign up</button>
         <Login />
         </div>
         }

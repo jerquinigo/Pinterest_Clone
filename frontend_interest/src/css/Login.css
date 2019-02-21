@@ -4,11 +4,11 @@
        display:flex;
 
 }
-.formlogoDiv {
+.logoDiv {
   width: 100%;
 }
 
-.logoCreateAccount {
+.formLogo {
   margin-top: 40px;
   height: 60px;
   width: auto;
@@ -23,7 +23,7 @@ margin-right: auto; */
   position: relative;
 } */
 
-.transparentPage{
+.transparentLoginPage{
   background: url(../frontendResources/transpBlack25.png);
   position: absolute;
   top: 0;
@@ -33,14 +33,14 @@ margin-right: auto; */
   min-height: 100%;
 }
 
-.centerForm{
+.centerLoginForm{
   width:100%;
   /* margin-left:auto;
   margin-right:auto; */
 
 }
 
-.formStyleDiv {
+.formLoginStyleDiv {
   width: 440px;
   height: 500px;
   margin-top:20px;
@@ -52,13 +52,13 @@ margin-right: auto; */
 }
 /* change the color for the div */
 
-.signUpText {
+.LoginUpText {
   color: rgb(51, 51, 51);
   font-size: 32px;
   font-weight: bold;
 }
 
-.signUpDescription {
+.LoginDescription {
   text-align: center;
   color: rgb(51, 51, 51);
   font-size: 16px;
@@ -72,7 +72,7 @@ margin-right: auto; */
   width: 400px;
 }
 
-.formLoginContainer {
+.formContainer {
   height: 420px;
   width: 391px;
   margin-left: auto;

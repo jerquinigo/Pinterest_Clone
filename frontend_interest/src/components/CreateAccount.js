@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Login from "./Login.js";
 import logo from "../frontendResources/InterestHeartlogo.png";
 
 import "../css/CreateAccount.css";

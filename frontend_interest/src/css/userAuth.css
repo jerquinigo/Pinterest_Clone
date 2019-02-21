@@ -1,0 +1,12 @@
+.authToggleButton {
+
+    position: absolute;
+     left: 30px;
+     top: 30px;
+     font-size: 16px;
+     font-weight: 700;
+     width:10%;
+     height:8%;
+     z-index:2;
+
+ }
