@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import NavBar from "./NavBar.js";
+// import NavBar from "./NavBar.js";
 import {AllPinsList} from "./AllPinsList.js";
+import NavBarContainer from './NavBarContainer.js'
 // import {Route} from 'react-router-dom'
-// import axios from 'axios'
 
 class Home extends Component {
   componentDidMount() {
@@ -14,7 +14,7 @@ class Home extends Component {
     console.log(this.props.pins, "the pins")
     return (
       <div className="homepage">
-        <NavBar />
+        <NavBarContainer />
 
         <AllPinsList pins={this.props.pins} />
       </div>

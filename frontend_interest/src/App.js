@@ -3,7 +3,8 @@ import {Route} from 'react-router-dom';
 import HomeContainer from './components/HomeContainer.js'
 import UserAuthContainer from './components/UserAuthContainer.js'
 import Auth from './Utils/utilAuth.js'
-import {AuthRoute} from './Utils/utilAuthRouting.js'
+import {AuthRoute, ProtectedRoute} from './Utils/utilAuthRouting.js'
+
 import './App.css';
 
 class App extends Component {
@@ -13,7 +14,7 @@ class App extends Component {
     return (
       <div className="App">
         <AuthRoute exact path={"/"} component={UserAuthContainer} />
-        <Route exact path={"/home"} component={HomeContainer} />
+        <ProtectedRoute exact path={"/home"} component={HomeContainer} />
 
       </div>
     );

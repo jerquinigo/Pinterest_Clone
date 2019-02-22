@@ -4,12 +4,15 @@ import "../css/NavBar.css";
 import {withRouter} from 'react-router-dom'
 
 
-
 class NavBar extends React.Component{
 
-
+  handleLogout = (event) => {
+    event.preventDefault()
+    this.props.logoutUser()
+  }
 
 render(){
+  console.log(this.props.email, "navbar");
   return (
     <div className="navBarPage">
       <div className="logoAndSearch">
@@ -18,8 +21,9 @@ render(){
         <div className="listItems">
           <ul>
             <li className="list">Home</li>
-            <li className="list">username</li>
-            <li className="list"><button>log out</button></li>
+            <li className="list">{this.props.email}</li>
+            <li className="list"><button onClick={this.handleLogout}>log out</button></li>
+
           </ul>
         </div>
       </div>

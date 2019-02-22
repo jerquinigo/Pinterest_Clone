@@ -6,9 +6,6 @@ import "../css/userAuth.css"
 class UserAuth extends Component {
   constructor(props) {
     super(props)
-    // this.state = {
-    // buttonClicked: false;
-    // }
   }
 
   componentDidMount(){
@@ -53,5 +50,3 @@ class UserAuth extends Component {
 }
 
 export default UserAuth;
-
-// <CreateAccount toggleForm={this.props.toggleForm} />
