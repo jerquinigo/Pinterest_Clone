@@ -83,20 +83,18 @@ const deleteUser = (req, res, next) => {
 function createUser(req, res, next) {
   const hash = authHelpers.createHash(req.body.password_digest);
 
-  db.none(
-    "INSERT INTO users (name, password_digest, username, email, profile_pic_url) VALUES (${name}, ${password_digest}, ${username}, ${email}, ${profile_pic_url})",
+  db.one(
+    "INSERT INTO users (email, name, password_digest) VALUES (${email}, ${name}, ${password_digest}) RETURNING id, email, name",
     {
-      name: req.body.name,
-      password_digest: hash,
-      username: req.body.username,
       email: req.body.email,
-      profile_pic_url: req.body.profile_pic_url
-
+      name: req.body.name,
+      password_digest: hash
      }
   )
-    .then(() => {
+    .then(user => {
       res.status(200).json({
-        message: "Registration successful."
+        message: "Registration successful.",
+        user:user
       });
     })
     .catch(err => {
@@ -112,14 +110,18 @@ function logoutUser(req, res, next) {
 }
 
 function loginUser(req, res) {
-  res.json(req.user);
+  res.json({
+    id: req.user.id,
+    name: req.user.name,
+    email: req.user.email
+  });
 }
 
 function isLoggedIn(req, res) {
   if (req.user) {
-    res.json({ username: req.user });
+    res.json({ email: req.user });
   } else {
-    res.json({ username: null });
+    res.json({ email: null });
   }
 }
 

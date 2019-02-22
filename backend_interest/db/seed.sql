@@ -5,10 +5,10 @@ CREATE DATABASE interest;
 
 CREATE TABLE users(
   id SERIAL PRIMARY KEY,
+email VARCHAR NOT NULL UNIQUE,
 name VARCHAR NOT NULL,
 password_digest VARCHAR NOT NULL,
-username VARCHAR NOT NULL,
-email VARCHAR NOT NULL,
+username VARCHAR UNIQUE,
 profile_pic_url VARCHAR
 );
 
