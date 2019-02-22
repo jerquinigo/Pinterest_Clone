@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import NavBar from "./NavBar.js";
 import {AllPinsList} from "./AllPinsList.js";
+// import {Route} from 'react-router-dom'
 // import axios from 'axios'
 
 class Home extends Component {

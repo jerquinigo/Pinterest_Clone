@@ -20,12 +20,25 @@ export const newUser = (user) => dispatch =>  {
 }
 
 export const loginUser = (user) => dispatch =>  {
+
   return session.loginUser(user)
   .then(response => {
 
   Auth.authenticateUser(response.data.email)
   return dispatch(recieveUser(response.data.email))
 }).catch(err => {
-  Auth.deauthenticateUser(err)
+
+  Auth.deauthenticateUser()
 })
+}
+
+export const logoutUser = () => dispatch => {
+  return session.logoutUser()
+  .then(() => {
+    Auth.deauthenticateUser()
+    return dispatch(recieveUser(null))
+  }).catch(err => {
+
+    Auth.deauthenticateUser()
+  })
 }

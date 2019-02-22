@@ -28,7 +28,7 @@ class UserAuth extends Component {
 
 
   render() {
-console.log(this.props, "check")
+// console.log(this.props, "check")
     return (
       <div>
       <div className="parentLogInImageDiv">{this.displayPins()}</div>
@@ -36,13 +36,13 @@ console.log(this.props, "check")
         {!this.props.toggle ?
           <div>
             <button onClick={this.props.toggleForm} className="authToggleButton">Log in</button>
-        <CreateAccount />
+        <CreateAccount newUser={this.props.newUser} loginUser={this.props.loginUser}/>
         </div>
         :
         <div>
           <button onClick={this.props.toggleForm}
             className="authToggleButton">Sign up</button>
-        <Login />
+        <Login loginUser={this.props.loginUser}/>
         </div>
         }
 

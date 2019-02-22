@@ -1,10 +1,15 @@
 import axios from "axios";
 
 export const newUser = (user) => {
-  return axios.post("/users/new", user)
+  return axios.post("/api/users/new", user)
 
 }
 
 export const loginUser = (user) => {
-  return axios.get("/users/isLoggedIn")
-} 
+  return axios.post("/api/users/login", user)
+}
+
+
+export const logoutUser = () => {
+  return axios.post("/api/users/logout")
+}

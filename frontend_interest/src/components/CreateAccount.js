@@ -10,12 +10,13 @@ class CreateAccount extends Component {
     this.state = {
       email: "",
       name: "",
-      password: "",
-      buttonClicked: false
+      password_digest: ""
     };
   }
 
-
+componentDidMount(){
+  // this.onSubmit()
+}
 
   handleChange = event => {
     this.setState({
@@ -25,6 +26,14 @@ class CreateAccount extends Component {
 
   onSubmit = event => {
     event.preventDefault();
+    this.props.newUser(this.state).then(() => {
+
+      this.props.loginUser({
+        email: this.state.email,
+        password_digest: this.state.password_digest
+      }) //pass an object that is going to be the user
+    })
+
   };
 
   render() {
@@ -69,7 +78,7 @@ class CreateAccount extends Component {
                       onChange={this.handleChange}
                       className="textBox"
                       value={this.state.password}
-                      name="password"
+                      name="password_digest"
                       type="password"
                       placeholder="Create password"
                     />
@@ -92,10 +101,4 @@ class CreateAccount extends Component {
   }
 }
 
-        // <div className="parentLogInImageDiv">{this.displayPins()}</div>
-
-
-        // <button onClick={this.props.toggleForm} className="loginButton">
-        //   Log In
-        // </button>
 export default CreateAccount;
