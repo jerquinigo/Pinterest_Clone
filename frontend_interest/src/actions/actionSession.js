@@ -25,7 +25,7 @@ export const loginUser = (user) => dispatch =>  {
   .then(response => {
 
   Auth.authenticateUser(response.data.email)
-  return dispatch(recieveUser(response.data.email))
+  return dispatch(recieveUser(response.data))
 }).catch(err => {
 
   Auth.deauthenticateUser()
@@ -37,6 +37,24 @@ export const logoutUser = () => dispatch => {
   .then(() => {
     Auth.deauthenticateUser()
     return dispatch(recieveUser(null))
+  }).catch(err => {
+
+    Auth.deauthenticateUser()
+  })
+}
+
+
+
+
+
+export const checkAuthenticationStatus = (user) =>
+ dispatch =>  {
+
+  return session.isLoggedIn(user)
+  .then(user => {
+    if(user.data.email === Auth.getToken(user)){
+      return dispatch(recieveUser(user.data.email))
+    }
   }).catch(err => {
 
     Auth.deauthenticateUser()

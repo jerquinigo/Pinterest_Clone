@@ -1,0 +1,34 @@
+.HomeImages {
+  width: 236px;
+  height: auto;
+  border-radius: 6px;
+}
+
+.homeMapImageDiv {
+  /* display:flex; */
+	margin-right: 8px;
+  margin-bottom: 8px;
+
+}
+
+
+
+.parentImageDiv {
+   line-height: 0;
+    -webkit-column-count: 5;
+    -webkit-column-gap: 0px;
+    -moz-column-count: 5;
+    -moz-column-gap: 0px;
+     column-count: 5;
+     column-gap: 0px;
+}
+.parentImageDiv img {
+    margin-top:15px;
+   width: 100% !important;
+   height: auto !important;
+}
+.parentImageDiv{
+   display:inline-block;
+   margin-right: auto;
+   margin-left: auto;
+}

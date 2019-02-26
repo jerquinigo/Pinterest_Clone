@@ -13,3 +13,7 @@ export const loginUser = (user) => {
 export const logoutUser = () => {
   return axios.post("/api/users/logout")
 }
+
+export const isLoggedIn = () => {
+  return axios.post("/api/users/isLoggedIn")
+}

@@ -7,7 +7,7 @@ export const loginPinsReducer = (oldState = {}, action) => {
   Object.freeze(oldState)
   switch(action.type){
     case RECEIVE_PINS:
-    return noramalize(action.pins);
+    return normalize(action.pins);
     case "RECEIVE_ONE_PIN":
     return merge({}, oldState, {[action.pin.id]: action.pins })
     default:
@@ -15,6 +15,14 @@ export const loginPinsReducer = (oldState = {}, action) => {
   }
 }
 
+
+function normalize(arr) {
+  let obj = {};
+  arr.forEach(el => {
+    obj[el.id] = el
+  })
+  return obj
+}
 //how merge works
 // {}
 // {1: {id: 1}}
@@ -22,13 +30,7 @@ export const loginPinsReducer = (oldState = {}, action) => {
 // {2: {id: 2}}
 // {1: {id: 1}, 2: {id: 2}}
 
-function noramalize(arr) {
-  let obj = {};
-  arr.forEach(el => {
-    obj[el.id] = el
-  })
-  return obj
-}
+
 
 // {
 //   1: {id: 1, pin_url: "httlejlkfsj"} // normalalized state

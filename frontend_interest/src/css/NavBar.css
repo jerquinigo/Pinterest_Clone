@@ -6,8 +6,24 @@
 }
 
 .logoAndSearch{
+  height: 40px;
   display: flex;
     justify-content: end;
+    align-items: center;
+        border-bottom:1px solid grey;
+        position: -webkit-sticky; /* Safari */
+position: sticky;
+top: 0;
+}
+
+.searchBoxAndMagnifyingStyling{
+  width: 80%;
+  border: 0;
+  border-radius: 4px;
+      background-color: transparent;
+      background-color: #cccccc;
+      display: flex;
+justify-content: end;
     align-items: center;
 }
 
@@ -23,5 +39,16 @@
 }
 
 .searchBox{
-  width: 80%;
+  -webkit-font-smoothing: antialiased;
+width: 80%;
+border: 0;
+border-radius: 4px;
+    background-color: transparent;
+    background-color: #cccccc;
+    font-size: 16px;
+    font-weight: 600;
+    height: 30px;
+
+
+
 }

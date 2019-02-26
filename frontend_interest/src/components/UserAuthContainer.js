@@ -8,12 +8,12 @@ const mapStateToProps = state => {
   console.log(state);
   return {
     toggle: state.toggle,
-    pins: state.pins,
+    pins: Object.values(state.pins),
     currentUser: state.session.currentUser
   };
 };
 const mapDispatchToProps = dispatch => {
-  console.log(dispatch(fetchAllPins()));
+  // console.log(dispatch(fetchAllPins()));
   return {
     toggleForm: () => dispatch(toggleFormStatus()),
     fetchAllPins: () => dispatch(fetchAllPins()),
