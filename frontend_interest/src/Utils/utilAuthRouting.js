@@ -6,10 +6,11 @@ import Auth from "./utilAuth.js";
 const Authorize = ({ component: Component, path, loggedIn }) => {
   return (
     <Route
+      exact
       path={path}
-      render={props =>
-        !loggedIn ? <Component {...props} /> : <Redirect to={"/home"} />
-      }
+      render={props => {
+        return !loggedIn ? <Component {...props} /> : <Redirect to={"/home"} />;
+      }}
     />
   );
 };
@@ -18,14 +19,15 @@ const Protected = ({ component: Component, path, loggedIn }) => {
   return (
     <Route
       path={path}
-      render={props =>
-        loggedIn ? <Component {...props} /> : <Redirect to={"/"} />
-      }
+      render={props => {
+        return loggedIn ? <Component {...props} /> : <Redirect to={"/"} />;
+      }}
     />
   );
 };
 
 const mapStateToProps = state => {
+  // debugger
   return {
     loggedIn: Auth.isUserAuthenticated()
   };

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Route} from 'react-router-dom';
 import HomeContainer from './components/HomeContainer.js'
 import UserAuthContainer from './components/UserAuthContainer.js'
-import DisplayOnePinById from './components/DisplayOnePinById.js'
+import DisplayOnePinByIdContainer from './components/DisplayOnePinByIdContainer.js'
 // import Auth from './Utils/utilAuth.js'
 import {AuthRoute, ProtectedRoute} from './Utils/utilAuthRouting.js'
 
@@ -17,27 +17,7 @@ class App extends Component {
 componentDidMount(){
 this.props.checkAuthenticationStatus()
 }
-//   checkAuthenticateStatus = () => {
-//   axios.get("/users/isLoggedIn").then(user => {
-//     if (user.data.email === Auth.getToken()) {
-//
-//       // this.setState({
-//       //   isLoggedIn: Auth.isUserAuthenticated(),
-//       //   username: Auth.getToken()
-//       // });
-//     } else {
-//       if (user.data.username) {
-//         this.logoutUser();
-//       } else {
-//         Auth.deauthenticateUser();
-//       }
-//     }
-//   });
-// };
 
-// checkAuthenticateStatus{
-//
-// }
 
 
 
@@ -46,9 +26,9 @@ this.props.checkAuthenticationStatus()
     return (
       <div className="App">
 
-        <AuthRoute exact path={"/"} component={UserAuthContainer} />
         <ProtectedRoute exact path={"/home"} component={HomeContainer} />
-        <ProtectedRoute exact path={"/pins/:id"} component={DisplayOnePinById}/>
+        <ProtectedRoute exact path={"/pins/:id"} component={DisplayOnePinByIdContainer}/>
+        <AuthRoute  path={"/"} component={UserAuthContainer} />
 
       </div>
     );

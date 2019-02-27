@@ -44,11 +44,13 @@ class AllPinsList extends Component {
         {this.displayPins()}
 
 
-          <Route path={"/pins/1"} component={DisplayOnePinById} />
+
 
       </div>
     )
   }
 }
+
+    // <Route path={"/pins/:id"} component={DisplayOnePinById} />
 
 export default AllPinsList;

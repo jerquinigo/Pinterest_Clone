@@ -3,7 +3,7 @@ const Auth = {
     localStorage.setItem("token", token);
   },
   isUserAuthenticated: () => {
-    return localStorage.getItem("token") !== null;
+    return localStorage.getItem("token") !== null && localStorage.getItem("token") !== "";
   },
   deauthenticateUser: () => {
     localStorage.removeItem("token");

@@ -4,7 +4,7 @@ import { loginPinsReducer } from "./loginPinsReducer.js"
 import { toggleFormReducer } from "./toggleFormReducer.js"
 import { sessionReducer } from "./sessionReducer.js"
 // import {loginDisplayNavbarReducer} from "./loginDisplayNavbarReducer.js"
-import {getOnePinReducer} from "./displayOnePinReducer.js"
+
 
 const rootReducer = combineReducers({
   pins: pinsReducer,
@@ -12,7 +12,7 @@ const rootReducer = combineReducers({
   toggle: toggleFormReducer,
   session: sessionReducer,
   // email: loginDisplayNavbarReducer,
-  pin: getOnePinReducer
+
 
 });
 
