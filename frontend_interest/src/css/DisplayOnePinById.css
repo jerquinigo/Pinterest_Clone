@@ -1,0 +1,16 @@
+.onePinImage{
+  width: 496px;
+  height:auto;
+  margin-top:10px;
+}
+
+.imageContainer{
+  width:896px;
+  background-color: white;
+}
+
+.mainImageDiv{
+  background-color: grey;
+width:100%;
+
+}
