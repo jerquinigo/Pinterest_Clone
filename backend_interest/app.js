@@ -32,10 +32,16 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../frontend_interest/build')));
 //the routes to use
 app.use('/', indexRouter);
 app.use('/api/users/', usersRouter);
 app.use('/api/pins/', photoRouter);
+
+//this needs to go below the routes
+app.use("*", (req,res,next) => {
+  res.sendFile(path.join(__dirname, "../frontend_interest/build/index.html"));
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
