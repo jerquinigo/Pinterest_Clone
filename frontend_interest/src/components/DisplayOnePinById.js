@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import NavBarContainer from './NavBarContainer.js'
-import '../css/DisplayOnePinById.css'
+import NavBarContainer from "./NavBarContainer.js";
+import "../css/DisplayOnePinById.css";
 
 class DisplayOnePinById extends Component {
   componentDidMount() {
@@ -14,11 +14,13 @@ class DisplayOnePinById extends Component {
     return (
       <div className="displayOnePinPage">
         <NavBarContainer />
-        <div className="mainImageDiv">
-        <div className="imageContainer">
-          <img className="onePinImage" src={this.props.pin.imgurl} alt="" />
+        <div className="grandparentMainImageDiv">
+          <div className="mainImageDiv">
+            <div className="imageContainer">
+              <img className="onePinImage" src={this.props.pin.imgurl} alt="" />
+            </div>
+          </div>
         </div>
-      </div>
       </div>
     );
   }

@@ -43,8 +43,9 @@ return window.localStorage.token.substring(0, window.localStorage.token.lastInde
 
 
 render(){
+  debugger;
   // let {currentUser} = this.props;
-  // console.log(this.props.currentUser, "navbar");
+  console.log(this.props, "navbar");
   // if(this.props.currentUser){
   // if(!currentUser) return null
   return (
@@ -58,7 +59,7 @@ render(){
         <div className="listItems">
           <ul>
             <li className="list"> <Link className="naviLink"to={"/Home"}> Home</Link></li>
-            <li className="list">{this.displayUserWithoutEmail()}</li>
+            <li className="list"><Link to={`/users/${this.props.currentUser.id}`}>{this.displayUserWithoutEmail()}</Link></li>
             <li onClick={this.handleLogout } className="list" >log out</li>
 
           </ul>
@@ -70,6 +71,7 @@ render(){
   }
 };
 
+//on line 61 i need to use this.props.currentuser.id to get the user path id, but it doesnt work all the time and i am not sure why it does not work
 // } else{
 //   return null
 // }

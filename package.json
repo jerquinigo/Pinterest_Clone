@@ -1,0 +1,21 @@
+{
+  "name": "PinterestCloneInterest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/bin/www",
+    "heroku-postbuild": "cd backend_interest && npm install && cd ../frontend_interest && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jerquinigo/Pinterest_Clone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jerquinigo/Pinterest_Clone/issues"
+  },
+  "homepage": "https://github.com/jerquinigo/Pinterest_Clone#readme"
+}
