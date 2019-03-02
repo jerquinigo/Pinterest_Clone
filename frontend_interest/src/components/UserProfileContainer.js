@@ -4,16 +4,16 @@ import UserProfile from './UserProfile.js'
 import {getSingleUserProfile} from '../actions/actionUsers.js'
 
 
-export const mapStateToProps = (state) => {
+export const mapStateToProps = (state, ownProps) => {
   return{
-  user: state.userProfile.user.id
+  user: state.userProfile[ownProps.match.params.id]
   }
 }
 
 
 export const mapDispatchToProps = (dispatch) => {
   return{
-getSingleUserProfile: (user) => dispatch(getSingleUserProfile(user))
+getSingleUserProfile: (id) => dispatch(getSingleUserProfile(id))
   }
 }
 

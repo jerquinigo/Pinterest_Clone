@@ -28,10 +28,10 @@ this.props.checkAuthenticationStatus()
     return (
       <div className="App">
 
-        <ProtectedRoute exact path={"/home"} component={HomeContainer} />
-        <ProtectedRoute exact path={"/pins/:id"} component={DisplayOnePinByIdContainer}/>
-        <ProtectedRoute exact path={"/users/:id"} component={UserProfileContainer}/>
-        <AuthRoute  path={"/"} component={UserAuthContainer} />
+        <ProtectedRoute exact path="/home" component={HomeContainer} />
+        <ProtectedRoute exact path="/pins/:id" component={DisplayOnePinByIdContainer}/>
+        <ProtectedRoute exact path="/users/:id" component={UserProfileContainer}/>
+        <AuthRoute  path="/" component={UserAuthContainer} />
 
       </div>
     );

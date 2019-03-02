@@ -3,6 +3,7 @@ import { toggleFormStatus } from "../actions/loginCreateButtonAction.js";
 import UserAuth from './UserAuth.js'
 import {fetchAllPins} from '../actions/actionLogInPins.js'
 import { newUser,loginUser } from '../actions/actionSession.js'
+import { withRouter } from 'react-router-dom'
 
 const mapStateToProps = state => {
   console.log(state);
@@ -22,7 +23,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(UserAuth);
+)(UserAuth));

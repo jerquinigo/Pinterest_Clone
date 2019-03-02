@@ -1,4 +1,5 @@
 import * as session from '../Utils/utilSessions.js'
+import * as userSession from '../Utils/utilUsers.js'
 import Auth from '../Utils/utilAuth.js'
 // import PrivateRoute from '../Utils/utilAuthRouting.js'
 
@@ -47,16 +48,25 @@ export const logoutUser = () => dispatch => {
 
 
 
-export const checkAuthenticationStatus = (user) =>
+export const checkAuthenticationStatus = () =>
  dispatch =>  {
-
-  return session.isLoggedIn(user)
-  .then(user => {
-    if(user.data.email === Auth.getToken(user)){
-      return dispatch(recieveUser(user.data.email))
+  return session.isLoggedIn()
+  .then(res => {
+    if(res.data.email.email === Auth.getToken()){
+      return dispatch(recieveUser(res.data.email))
     }
   }).catch(err => {
 
     Auth.deauthenticateUser()
   })
+}
+
+
+export const fetchSingleUser = (id) => dispatch => {
+ return userSession.fetchSingleUser(id)
+ .then(user => {
+   return dispatch(recieveUser(user.data))
+ }).catch(err => {
+   console.log(err)
+ })
 }

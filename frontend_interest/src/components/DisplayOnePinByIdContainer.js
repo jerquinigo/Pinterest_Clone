@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import DisplayOnePinById from './DisplayOnePinById.js'
 import {fetchOnePin} from '../actions/actionPins.js'
+import { withRouter } from 'react-router-dom'
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -18,5 +19,5 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  mapStateToProps, mapDispatchToProps)(DisplayOnePinById);
+export default withRouter(connect(
+  mapStateToProps, mapDispatchToProps)(DisplayOnePinById));

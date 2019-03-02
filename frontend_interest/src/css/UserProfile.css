@@ -1,0 +1,10 @@
+.addButton{
+  height:24px;
+  width:24px;
+}
+
+
+.editButtonsPinBoards{
+  display: flex;
+    padding-left: 10%;
+}

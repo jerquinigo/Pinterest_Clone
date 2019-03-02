@@ -3,6 +3,8 @@ CREATE DATABASE interest;
 
 \c interest
 
+-- comment this out to be able to use for heroku
+
 CREATE TABLE users(
   id SERIAL PRIMARY KEY,
 email VARCHAR NOT NULL UNIQUE,

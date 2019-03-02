@@ -12,57 +12,56 @@ class NavBar extends React.Component{
   //       this.displayUserWithoutEmail()
   // }
 
+componentDidMount(){
+  this.props.fetchSingleUser(this.props.id)
+}
 
+handleLogout = (event) => {
+  event.preventDefault()
+  this.props.logoutUser()
+}
 
-
-  handleLogout = (event) => {
-    event.preventDefault()
-    this.props.logoutUser()
+displayUserWithoutEmail = () => {
+// return window.localStorage.token.substring(0, window.localStorage.token.lastIndexOf("@"))
+  if (window.localStorage.token) {
+    return window.localStorage.token
+    // return this.props.currentUser.email
+    // return this.props.currentUser.substring(0, this.props.currentUser.lastIndexOf("@"))
   }
-
-  displayUserWithoutEmail = () => {
-return window.localStorage.token.substring(0, window.localStorage.token.lastIndexOf("@"))
-
-//     var email = this.props.currentUser
-// var name = email.substring(0, email.lastIndexOf("@"));
-// console.log(name, "the name<3")
-//   return name;
-
-  }
-//
-// displayCurrentUser = () => {
-//   if(this.props.currentUser){
-//     return(
-//
-//     <li className="list">{this.props.currentUser.email}</li>
-//     )
-//   }else{
-//     return null
-//   }
-// }
-
+}
 
 render(){
-  debugger;
-  // let {currentUser} = this.props;
-  console.log(this.props, "navbar");
+  console.log(this.props.currentUser, "NAVBAR!!");
   // if(this.props.currentUser){
   // if(!currentUser) return null
   return (
     <div className="navBarPage">
-      <div className="logoAndSearch">
-        <Link className="logoHome" to={"/Home"}><img className="logo" src={logo} alt="" /></Link>
-        <div className="searchBoxAndMagnifyingStyling">
-        <img className="logo" src={magnifyingGlass} alt="" />
-        <input className="searchBox" type="text" placeholder="search" />
-        </div>
-        <div className="listItems">
-          <ul>
-            <li className="list"> <Link className="naviLink"to={"/Home"}> Home</Link></li>
-            <li className="list"><Link to={`/users/${this.props.currentUser.id}`}>{this.displayUserWithoutEmail()}</Link></li>
-            <li onClick={this.handleLogout } className="list" >log out</li>
+      <div className="logoNavDiv">
+        <Link to={"/Home"}>
+          <img className="logo" src={logo} alt="logo" />
+        </Link>
+      </div>
 
-          </ul>
+      <div className="navSearchParentDiv">
+        <div className="searchBoxDiv">
+            <img className="magnifyLogo" src={magnifyingGlass} alt="" />
+        <input className="searchBox" type="text" placeholder="Search" />
+        </div>
+      </div>
+
+      <div className="listItems">
+        <div className="list">
+          <Link className="naviLink"to={"/Home"}> Home</Link>
+        </div>
+        <div className="list">
+          {this.props.currentUser &&
+            <Link to={`/users/${this.props.currentUser.id}`}>
+              {this.displayUserWithoutEmail()}
+            </Link>
+          }
+        </div>
+        <div onClick={this.handleLogout} className="list">
+          Log out
         </div>
       </div>
     </div>

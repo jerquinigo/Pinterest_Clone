@@ -8,6 +8,7 @@ const passport = require("passport");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 let photoRouter = require('./routes/photos.js');
+let boardRouter = require('./routes/boards.js');
 
 var app = express();
 
@@ -37,6 +38,7 @@ app.use(express.static(path.join(__dirname, '../frontend_interest/build')));
 app.use('/', indexRouter);
 app.use('/api/users/', usersRouter);
 app.use('/api/pins/', photoRouter);
+app.use('/api/boards/', boardRouter);
 
 //this needs to go below the routes
 app.use("*", (req,res,next) => {

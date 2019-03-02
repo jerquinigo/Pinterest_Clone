@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Home from './Home';
 import { fetchAllPins } from "../actions/actionPins.js";
+import { withRouter } from 'react-router-dom'
 // import {emailLogin} from "../actions/actionDisplayLoginName.js"
 const mapStateToProps = state => {
   return {
@@ -16,5 +17,5 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  mapStateToProps, mapDispatchToProps)(Home);
+export default withRouter(connect(
+  mapStateToProps, mapDispatchToProps)(Home));
