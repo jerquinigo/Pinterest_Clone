@@ -17,7 +17,7 @@ getAllBoards = (req, res, next) => {
 getAllBoardsForSingleUser = (req, res, next) => {
   let userId = parseInt(req.params.id);
   db.any(
-    "SELECT * FROM boards JOIN pins ON boards.id=pins.id WHERE boards.user_id=$1",
+    "SELECT * FROM boards WHERE user_id=$1",
     [userId]
   )
     .then(boards => {
