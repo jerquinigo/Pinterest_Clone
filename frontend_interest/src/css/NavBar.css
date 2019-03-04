@@ -3,6 +3,9 @@
   height: 62px;
   border-bottom: 1px solid grey;
   color: #EFEFEF;
+  /* position: fixed;
+  top: 0;
+  width: 100%; */
 }
 
 .logoNavDiv {
@@ -13,6 +16,11 @@
   justify-content: center;
   background-color: transparent;
 }
+/* .sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+} */
 
 .logo {
   height: 28px;
@@ -86,6 +94,8 @@
   text-decoration: none;
   color: #8E8E8E;
 }
+
+
 
 /*
 .logoNavDiv{

@@ -38,7 +38,6 @@ class AllPinsList extends Component {
   // }
 
   render() {
-    console.log(this.props,"to check")
     return(
       <div className="parentImageDiv">
         {this.displayPins()}

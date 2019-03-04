@@ -7,3 +7,7 @@ export const fetchAllPins = () => {
 export const fetchSinglePin = (id) => {
   return axios.get(`/api/pins/${id}`);
 }
+
+export const createSinglePin = (pins) => {
+  return axios.post("/api/pins", pins);
+}

@@ -31,7 +31,7 @@ displayUserWithoutEmail = () => {
 }
 
 render(){
-  console.log(this.props.currentUser, "NAVBAR!!");
+  // console.log(this.props.currentUser, "NAVBAR!!");
   // if(this.props.currentUser){
   // if(!currentUser) return null
   return (

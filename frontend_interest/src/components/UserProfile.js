@@ -15,7 +15,11 @@ class UserProfile extends Component {
       pinTitle: "",
       pinDescription:"",
       pinCategory: "",
-      pinurl:""
+      pinurl:"",
+      user_board_id:null,
+      addedPin:false,
+      addedBoard:false,
+      pinMessage: "added a photo to website"
 
 
     };
@@ -23,6 +27,7 @@ class UserProfile extends Component {
 
   componentDidMount() {
     this.props.getSingleUserProfile(this.props.user);
+
   }
 
   displayEmailAsUserName = () => {
@@ -60,6 +65,16 @@ class UserProfile extends Component {
 
   submitCreateBoardForm = event => {
     event.preventDefault();
+    let boardData = {
+      user_id: this.props.match.params.id,
+      title: this.state.boardTitle
+    }
+
+    this.setState({
+      addedBoard: true,
+      boardTitle: ""
+    })
+    return this.props.createBoard(boardData)
   };
 
   displayCreateBoardAndPin = () => {
@@ -91,17 +106,43 @@ displayCreateBoardForm = () => {
             </button>
             <button type="submit">Cancel</button>
           </form>
-
+          {this.state.addedBoard ? <h3>added a new board</h3>: null}
       </div>
     )
   }
+}
+
+onSubmitPinForm = (event) => {
+
+  event.preventDefault()
+  let pinData = {
+    title: this.state.pinTitle,
+    description: this.state.pinDescription,
+    category: this.state.pinCategory,
+    imgUrl: this.state.pinurl,
+    user_board_id: this.state.user_board_id,
+    user_id: this.props.match.params.id
+
+  }
+
+  this.setState({
+    addedPin: true,
+    pinTitle: "",
+    pinDescription:"",
+    pinCategory: "",
+    pinurl:"",
+    user_board_id:null,
+
+  })
+
+  return this.props.createSinglePin(pinData)
 }
 
 displayCreatePinForm = () => {
   if(this.state.addFeature && this.state.createPin){
     return(
       <div>
-        <form>
+        <form >
 
             <input
               onChange={this.handleChange}
@@ -130,11 +171,19 @@ displayCreatePinForm = () => {
             name="pinurl"
             placeholder="add image url"/>
 
-            <button onClick={this.submitCreateBoardForm} type="submit">
+            <input
+              onChange={this.handleChange}
+              type="text"
+              value={this.state.user_board_id}
+              name="user_board_id"
+              placeholder="user Board id"/>
+
+            <button onClick={this.onSubmitPinForm} type="submit">
               Create
             </button>
-            <button type="submit">Cancel</button>
+            <button  type="submit">Cancel</button>
           </form>
+          {this.state.addedPin ? <h3>added a photo to website</h3>: null}
       </div>
     )
   }
@@ -142,6 +191,7 @@ displayCreatePinForm = () => {
 
   render() {
     console.log(this.state, "the state")
+    console.log(this.props, "in props in user profile")
 
     // console.log("PROFILE PROPS", this.props);
     return (

@@ -64,6 +64,31 @@ const updatePhoto = (req,res,next) => {
 
 }
 
+const createPhoto = (req,res,next) => {
+let board = parseInt(req.body.user_board_id)
+  let userId = parseInt(req.body.user_id)
+  db.one("INSERT INTO pins(title,description,category,imgUrl,user_board_id,user_id) VALUES(${title}, ${description}, ${category},${imgUrl}, ${user_board_id},${user_id}) RETURNING imgUrl",
+  {
+    title: req.body.title,
+    description: req.body.description,
+    category: req.body.category,
+    imgUrl: req.body.imgUrl,
+    user_board_id: board,
+    user_id: userId
+
+  }
+
+)
+.then(pin => {
+  res.status(200).json({
+    status: "success",
+    pin:pin,
+    message: "added a new pin"
+  })
+})
+.catch(err => next(err))
+}
+
 // const createPhoto = (req,res,next) => {
 //   db.none("INSERT INTO pins(title,description,category,imgUrl)")
 // }
@@ -76,5 +101,5 @@ const updatePhoto = (req,res,next) => {
 
 
 module.exports = {
-  getAllPhotos, getSinglePhoto, getAllPhotosForAUser, updatePhoto
+  getAllPhotos, getSinglePhoto, getAllPhotosForAUser, updatePhoto, createPhoto
 }

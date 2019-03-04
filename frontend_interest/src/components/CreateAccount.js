@@ -37,8 +37,7 @@ componentDidMount(){
   };
 
   render() {
-    console.log(this.state);
-    console.log(this.props, "in the account");
+
     return (
       <div className="createAccountPage">
         <div className="transparentPage">

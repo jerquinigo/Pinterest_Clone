@@ -33,13 +33,17 @@ getAllBoardsForSingleUser = (req, res, next) => {
 };
 
 createNewBoard = (req, res, next) => {
-  db.none(
-    "INSERT INTO boards(user_id,title) VALUES(${user_id}, ${title})",
-    req.body
+  db.one(
+    "INSERT INTO boards(user_id,title) VALUES(${user_id}, ${title}) RETURNING title",
+    {
+      user_id: req.body.user_id,
+      title: req.body.title
+    }
   )
-    .then(() => {
+    .then(board => {
       res.status(200).json({
         status: "success",
+        board: board,
         message: "created a new board"
       });
     })
