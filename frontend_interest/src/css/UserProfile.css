@@ -8,3 +8,21 @@
   display: flex;
     padding-left: 10%;
 }
+
+
+/* .parentUserBoard{
+display: flex;
+justify-content: space-around;
+
+}
+
+.displayUsersBoards{
+  background-color: blue;
+  width:300px;
+  height:265px;
+}
+
+.displayPinsOnBoard{
+  background-color: pink;
+  height:80%;
+} */

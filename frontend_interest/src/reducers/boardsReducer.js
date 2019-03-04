@@ -1,4 +1,5 @@
 import {POSTED_ONE_BOARD} from "../actions/actionBoards.js"
+import { RECEIVED_BOARDS_SINGLE_USER } from "../actions/actionBoards.js"
 
 import merge from 'lodash/merge'
 
@@ -7,6 +8,9 @@ export const boardsReducer = (oldState = {}, action) => {
   switch(action.type){
     case POSTED_ONE_BOARD:
       return normalize(action.postBoard)
+    case RECEIVED_BOARDS_SINGLE_USER:
+      let theBoards = normalize(action.allBoards)
+      return merge({}, oldState, theBoards)
       default:
       return oldState
   }
