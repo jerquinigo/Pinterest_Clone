@@ -16,7 +16,7 @@ class UserProfile extends Component {
       pinDescription: "",
       pinCategory: "",
       pinurl: "",
-      user_board_id: null,
+      user_board_id: "",
       addedPin: false,
       addedBoard: false,
       pinMessage: "added a photo to website"
@@ -24,7 +24,7 @@ class UserProfile extends Component {
   }
 
   componentDidMount() {
-    this.props.getSingleUserProfile(this.props.user);
+    this.props.getSingleUserProfile(parseInt(this.props.match.params.id));
     this.props.fetchAllBoardsforOneUser(parseInt(this.props.match.params.id));
   }
 
@@ -92,9 +92,10 @@ class UserProfile extends Component {
     let userBoards = Object.values(this.props.allBoards);
     console.log(userBoards, "in the function")
     return userBoards.map(boards => {
+
       return (
 
-          <option onChange={this.handleChange} name="user_board_id" value={boards.id}>{boards.title}</option>
+          <option value={boards.id}>{boards.title}</option>
 
 
       );
@@ -130,7 +131,7 @@ class UserProfile extends Component {
       description: this.state.pinDescription,
       category: this.state.pinCategory,
       imgUrl: this.state.pinurl,
-      user_board_id: this.state.user_board_id,
+      user_board_id: parseInt(this.state.user_board_id),
       user_id: this.props.match.params.id
     };
 
@@ -181,7 +182,7 @@ class UserProfile extends Component {
               placeholder="add image url"
             />
 
-          <select>{this.displayOptionBoardSelectForm()}</select>
+          <select onChange={this.handleChange} name="user_board_id" >{this.displayOptionBoardSelectForm()}</select>
 
 
             <button onClick={this.onSubmitPinForm} type="submit">
@@ -196,9 +197,10 @@ class UserProfile extends Component {
   };
 
   render() {
-    console.log(this.state, "the state");
+    console.log(this.state, "the state!!!!!!!!!!!");
     console.log(this.props, "in props in user profile");
     console.log(this.props.allBoards, "hunting");
+
 
     // console.log("PROFILE PROPS", this.props);
     return (

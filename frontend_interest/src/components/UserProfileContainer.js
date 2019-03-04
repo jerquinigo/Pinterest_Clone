@@ -8,7 +8,7 @@ import { fetchAllBoardsforOneUser } from '../actions/actionBoards.js'
 
 
 export const mapStateToProps = (state, ownProps) => {
-  console.log("STATE, ", state)
+  console.log(state, "STATE, reed ")
   return{
   user: state.userProfile[ownProps.match.params.id],
   pin: state.pins,
