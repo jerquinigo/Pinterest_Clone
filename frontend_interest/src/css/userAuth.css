@@ -1,12 +1,51 @@
-.authToggleButton {
 
-    position: absolute;
-     left: 30px;
-     top: 30px;
-     font-size: 16px;
-     font-weight: 700;
-     width:10%;
-     height:8%;
-     z-index:2;
+.userAuthPage{
+  width:100%;
+}
 
+.parentLogInImageDiv {
+   line-height: 0;
+    -webkit-column-count: 6;
+    -webkit-column-gap: 0px;
+    -moz-column-count: 6;
+    -moz-column-gap: 0px;
+     column-count: 6;
+     column-gap: 0px;
+     width:100%;
+     display: flex;
+       flex-wrap: wrap;
+}
+
+.loginImageDiv {
+  /* display:flex; */
+ margin-right: 8px;
+  margin-bottom: 8px;
+
+
+}
+
+ .loginImages {
+    width: 236px;
+   height: 300px;
+   object-fit: cover;
+   border-radius: 6px;
  }
+
+
+
+
+
+
+
+ .authToggleButton {
+
+     position: absolute;
+      left: 30px;
+      top: 30px;
+      font-size: 16px;
+      font-weight: 700;
+      width:10%;
+      height:8%;
+      z-index:2;
+
+  }

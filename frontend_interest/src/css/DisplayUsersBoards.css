@@ -1,6 +1,8 @@
-/* .test{
-  z-index: 100;
-} */
-.DisplayUsersBoardsPage{
-  z-index:-10;
+.innerDiv{
+  background-color: pink;
+}
+
+.thumbnail{
+  width:98px;
+  height:99px;
 }

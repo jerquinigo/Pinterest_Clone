@@ -5,7 +5,7 @@ const { getAllPhotos, getSinglePhoto, getAllPhotosForAUser, updatePhoto, createP
 
 router.get('/', getAllPhotos);
 router.get('/:id', getSinglePhoto);
-router.get('/:id/user',getAllPhotosForAUser )
+router.get('/user/:id',getAllPhotosForAUser )
 router.patch('/:id',updatePhoto)
 router.post('/', createPhoto)
 

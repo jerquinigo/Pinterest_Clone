@@ -34,7 +34,7 @@ const getAllPhotosForAUser =
 // select * from pins where user_board_id = $1
  (req,res,next) => {
   let userId = parseInt(req.params.id);
-  db.any("select pins.imgurl, pins.user_id from pins JOIN boards ON pins.user_id=boards.user_id WHERE user_board_id=$1", [userId])
+  db.any("SELECT * FROM pins WHERE user_id=$1", [userId])
   .then(pin => {
     res.status(200).json({
       status:"success",

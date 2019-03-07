@@ -27,8 +27,10 @@ class UserAuth extends Component {
   render() {
 // console.log(this.props, "check")
     return (
-      <div>
-      <div className="parentLogInImageDiv">{this.displayPins()}</div>
+      <div className="userAuthPage">
+      <div className="parentLogInImageDiv">
+        {this.displayPins()}
+      </div>
 
         {!this.props.toggle ?
           <div>

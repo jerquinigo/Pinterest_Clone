@@ -11,3 +11,7 @@ export const fetchSinglePin = (id) => {
 export const createSinglePin = (pins) => {
   return axios.post("/api/pins", pins);
 }
+
+export const fetchAllPinsForSingleUser = (id) => {
+  return axios.get(`/api/pins/user/${id}`)
+}
