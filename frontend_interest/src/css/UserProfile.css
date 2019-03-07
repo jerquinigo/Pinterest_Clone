@@ -9,20 +9,111 @@
     padding-left: 10%;
 }
 
+.displayBlackBackground{
+  background: url(../frontendResources/transpBlack25.png);
+  z-index: -2;
+}
 
-/* .parentUserBoard{
+.selectBoardOrPinContainer{
+width:100%;
 display: flex;
-justify-content: space-around;
+margin: auto;
+    width: 80%;
+
 
 }
 
-.displayUsersBoards{
-  background-color: blue;
-  width:300px;
-  height:265px;
+.selectBoardOrPin{
+  border: solid 2px #efefef;
+   border-radius: 10px;
+   z-index: 2;
+   background-color: white;
+
 }
 
-.displayPinsOnBoard{
-  background-color: pink;
-  height:80%;
-} */
+.selectBoardOrPin, ul{
+  list-style: none;
+}
+
+.ListOneItem{
+  width:202px;
+  height:26px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: -4px;
+
+
+}
+.ListTwoItem{
+  width:202px;
+  height:26px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: -4px;
+
+
+}
+
+.ListOneItem:hover{
+  background-color: #efefef;
+   border-radius: 10px;
+}
+
+.ListTwoItem:hover{
+  background-color: #efefef;
+   border-radius: 10px;
+}
+
+.createBoardFormContainer{
+  width:544px;
+  /* height:317px; */
+  background-color: #FFF;
+  margin-left: auto;
+  margin-right:auto;
+  z-index: 1;
+  border-radius: 10px;
+
+}
+
+.createBoardTitle{
+  /* width: 444px; */
+   height: 28px;
+   padding-top:20px;
+   padding-bottom:20px;
+   padding-left:50px;
+   padding-right:50px;
+   border-bottom: 1px solid #efefef;
+
+}
+
+.titleInput{
+  width: 512px;
+  height: 44px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 16px;
+  padding-right: 16px;
+   border-bottom: 1px solid #efefef;
+}
+
+.boardTitleInput{
+  width: 354px;
+  height: 22px;
+  margin-left: 25px;
+  padding-left: 15px;
+}
+
+.createBoardButton{
+  width: 512px;
+  height:56px;
+
+}
+
+.innerBoardButtonDiv{
+  width: 188px;
+  height: 40px;
+}

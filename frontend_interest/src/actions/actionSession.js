@@ -24,7 +24,6 @@ export const loginUser = (user) => dispatch =>  {
 
   return session.loginUser(user)
   .then(response => {
-
   Auth.authenticateUser(response.data.email)
   return dispatch(recieveUser(response.data))
 }).catch(err => {

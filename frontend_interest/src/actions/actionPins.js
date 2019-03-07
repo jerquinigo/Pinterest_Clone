@@ -54,9 +54,11 @@ export const createSinglePin = (pin) => dispatch => {
   return pinsApi
   .createSinglePin(pin)
   .then(res => {
+    debugger
     return dispatch(postedOnePin(res.data.pins))
   })
   .catch(err => {
+    debugger
     console.log(err);
   });
 }

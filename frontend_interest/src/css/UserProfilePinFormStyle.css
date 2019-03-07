@@ -1,0 +1,141 @@
+.pinDisplayBlackBackground{
+  background: url(../frontendResources/transpBlack25.png);
+  z-index: -2;
+}
+
+.pinFormContainer{
+min-width: 100%;
+}
+
+.mainPinFormDiv{
+  background-color:#fff;
+  width:840px;
+  height:580px;
+  margin-right:auto;
+  margin-left:auto;
+  padding: 20px 20px 0px 20px;
+  border-radius: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+
+.theFormContainer{
+  display: flex;
+    flex-direction: row-reverse;
+    width:100%;
+    /* justify-content: space-between; */
+}
+
+.displayPicture{
+  width:340px;
+  height:454px;
+  background-color: #EFEFEF;
+    padding: 0px 20px 0px 20px;
+   border-radius: 8px;
+   width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.SubmitAndCancelDiv{
+  display: flex;
+height: 40px;
+width: 840px;
+justify-content: flex-end;
+padding-bottom: 20px;
+}
+
+.formButton{
+  background-color: #f80000;
+  font-size: 16px;
+  border: none;
+border-radius: 5px;
+color: #fff;
+font-weight: 700;
+margin-right: 10px;
+}
+
+.formButton:hover{
+  background-color: #BB0000;
+  cursor: pointer;
+}
+
+.formTagToStyle{
+  width: 420px;
+  height:510px;
+  padding: 0px 20px 0px 20px;
+}
+
+.inputTitle{
+  height:47px;
+  width: 420px;
+  font-size: 36px;
+  color: #333;
+  cursor: text;
+  font-weight: bold;
+  border:none;
+  padding: 2px;
+  margin-bottom: 8px;
+}
+
+.inputDescription{
+  width:420px;
+  height: 242px;
+  padding: 2px;
+  font-size: 18px;
+  color: #333;
+  border:none;
+}
+
+.inputCategory{
+  height: 40px;
+  width: 420px;
+  border-color: #8E8E8E;
+  border-radius: 4px;
+  color: #333;
+  font-size:16px;
+  border-style: solid;
+  margin-bottom: 8px;
+    margin-top: 8px;
+
+}
+
+.inputUrl{
+  height: 40px;
+  width: 420px;
+  border-color: #8E8E8E;
+  border-radius: 4px;
+  color: #333;
+  font-size:16px;
+ border-style: solid;
+   margin-bottom: 8px;
+}
+
+.dropDownBoardSelector{
+  height: 40px;
+  width: 420px;
+  border-color: #8E8E8E;
+  border-radius: 4px;
+  color: #333;
+  font-size:16px;
+  background-color: #FFF;
+   border-style: solid;
+
+}
+
+.dragAndDropImage{
+  width: 380px;
+height: 480px;
+position: absolute;
+/* top: 0; */
+object-fit: cover;
+}
+
+.dragAndDrop{
+  width: 380px;
+   position: absolute;
+   height: 484px;
+   z-index: 1;
+   /* top: 0px; */
+}

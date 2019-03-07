@@ -44,7 +44,7 @@ class Login extends Component {
             <form onSubmit={this.onSubmit}>
               <input onChange={this.handleChange} name="email" value={this.state.email} className="textBox" type="text" placeholder="email" />
               <br />
-              <input onChange={this.handleChange} value={this.state.password_digest} name="password_digest"className="textBox" type="text" placeholder="password" />
+              <input onChange={this.handleChange} value={this.state.password_digest} name="password_digest"className="textBox" type="password" placeholder="password" />
               <br />
               <button  className="continue" type="submit">Continue</button>
             </form>

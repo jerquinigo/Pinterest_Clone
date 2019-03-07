@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import {Route,Link } from 'react-router-dom';
 import DisplayOnePinById from './DisplayOnePinById.js'
-
 import "../css/AllPinsList.css";
 
 class AllPinsList extends Component {
@@ -18,6 +17,7 @@ class AllPinsList extends Component {
 
         <div key={pin.id} className="homeMapImageDiv">
         <Link to={`/pins/${pin.id}`}> <img className="HomeImages" src={pin.imgurl} alt="" /></Link>
+
         </div>
       );
     });
@@ -38,6 +38,7 @@ class AllPinsList extends Component {
   // }
 
   render() {
+
     return(
       <div className="parentImageDiv">
         {this.displayPins()}
