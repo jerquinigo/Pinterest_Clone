@@ -20,13 +20,13 @@ display: flex;
 margin: auto;
     width: 80%;
 
-
 }
 
 .selectBoardOrPin{
   border: solid 2px #efefef;
    border-radius: 10px;
-   z-index: 2;
+   /* z-index: 10;
+   position:absolute; */
    background-color: white;
 
 }

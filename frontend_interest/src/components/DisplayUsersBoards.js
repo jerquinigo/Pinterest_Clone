@@ -12,7 +12,7 @@ class DisplayUsersBoards extends Component{
     let id = this.props.match.params.id
 
     this.props.fetchAllBoardsforOneUser(id)
-    this.props.fetchAllPinsForSingleUser(id)
+    this.props.fetchAllPins()
   }
 
 displayUsersBoards = () => {
@@ -40,8 +40,8 @@ displayUsersBoards = () => {
 
 
   render(){
-    console.log(this.props.allBoards, "THIS IS ALL THE BOARDS PROPS")
-    console.log(this.props.pins, "the PINS FOR THE BOARDS IN THE USER PROF")
+    // console.log(this.props.allBoards, "THIS IS ALL THE BOARDS PROPS")
+    console.log(this.props.boards, "the PINS FOR THE BOARDS IN THE USER PROF")
 
     return(
       <div className="displayUsersBoardsPage">
