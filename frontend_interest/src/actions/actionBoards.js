@@ -38,3 +38,11 @@ export const fetchAllBoardsforOneUser = (id) => dispatch => {
     console.log(err);
   });
 }
+
+export const getPinsByBoardId = (id) => dispatch => {
+  return boardsApi
+  .getPinsByBoardId(id)
+  .then(res => {
+    return dispatch(recievedUserBoards(res.data.pins))
+  })
+}

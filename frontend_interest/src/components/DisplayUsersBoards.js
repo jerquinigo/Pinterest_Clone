@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import '../css/DisplayUsersBoards.css'
+import { Link } from 'react-router-dom';
+import DisplayBoardItemsContainer from "./DisplayBoardItemsContainer.js"
+
 
 
 class DisplayUsersBoards extends Component{
@@ -15,33 +18,44 @@ class DisplayUsersBoards extends Component{
     this.props.fetchAllPins()
   }
 
-displayUsersBoards = () => {
-    let boards = Object.values(this.props.boards)
-    let picArr = []
-    console.log(boards, "IN THE BOARDS")
-    if(boards.length === 0) return null
-      return boards.map(boards => {
-        console.log(picArr, "the picture arr in the function")
-        return(
+ displayUsersBoards = () => {
+   let boardList = Object.values(this.props.boards)
+    return boardList.map(board => {
+     return (
+       <Link to={`/${window.localStorage.token}/boards/${board.id}`}>
+         <DisplayBoardItemsContainer board={board}/>
+       </Link>
+     )
+    })
+   }
 
-          <div className="displayUsersMainDiv">
-              {picArr.push(boards.imgurl)}
-            <div className="innerDiv">
-          {boards.title}<br />
 
-        <img className="thumbnail" src={boards.imgurl} alt=""/>
-        </div>
-          </div>
-        )
-      })
-
-  }
-
+  // displayBoardItem = () => {
+  //   // debugger;
+  //   let { board } = this.props;
+  //   // debugger;
+  //   if(!board.pins) return null
+  //   let imgArr = board.pins;
+  //   let newArr = [];
+  //   if(imgArr.length > 6){
+  //     newArr = imgArr.slice(0, 6);
+  //   } else {
+  //     newArr = imgArr;
+  //   }
+  //
+  //   let imgs = newArr.map(pinId => {
+  //     // debugger;
+  //     return <img className="board-item-img" src={this.props.pins[pinId].pinimg_url} alt=""/>
+  //   })
+  //   return <div className="board-item-imgs">{imgs}</div>
+  // }
 
 
   render(){
+
     // console.log(this.props.allBoards, "THIS IS ALL THE BOARDS PROPS")
-    console.log(this.props.boards, "the PINS FOR THE BOARDS IN THE USER PROF")
+    console.log(this.props.boards, "the BOARDS FOR THE BOARDS IN THE USER PROF")
+    console.log(this.props.pins,"the PINS FOR THE BOARDS IN THE USER PROF")
 
     return(
       <div className="displayUsersBoardsPage">

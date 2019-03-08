@@ -52,8 +52,28 @@ createNewBoard = (req, res, next) => {
     });
 };
 
+const getPinsByBoardId = (req, res, next) => {
+  let boardId = parseInt(req.params.id);
+  db.any(
+    "SELECT pins.* FROM boards JOIN pins ON boards.id = pins.user_board_id WHERE boards.id=$1",
+    [boardId]
+  )
+    .then(pins => {
+      res.status(200).json({
+        status: "success",
+        pins: pins,
+        message: "all pins on a single board"
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      next();
+    });
+};
+
 module.exports = {
   getAllBoards,
   getAllBoardsForSingleUser,
-  createNewBoard
+  createNewBoard,
+  getPinsByBoardId
 };
