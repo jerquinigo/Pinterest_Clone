@@ -27,9 +27,13 @@
 .imageInputButtons{
   width: 896px;
   height:40px;
-  background-color: pink;
+  background-color: #ffe1e6;
   margin-left: auto;
   margin-right:auto;
+  display: flex;
+justify-content: flex-end;
+border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
 
@@ -41,12 +45,15 @@
 
 .imageContainer{
   width:896px;
-  background-color: pink;
+  background-color: #ffe1e6;
   min-height:100%;
   margin-left: auto;
 margin-right: auto;
 display: flex;
     justify-content: space-evenly;
+    padding-bottom: 40px;
+    border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
 
 /* overflow:scroll; */
 }
@@ -55,4 +62,38 @@ display: flex;
 padding-top: 20px;
 width:100%;
 height:100%;
+}
+
+.selectDropDown{
+  width: 172px;
+  height:28px;
+    margin-top: 2%;
+    font-size:12px;
+    font-weight: 400;
+    border-radius: 4px;
+}
+
+.saveButton{
+  width:63px;
+  height:28px;
+  margin-right: 2%;
+    margin-top: 2%;
+    background-color: rgb(230, 0, 35);
+    border-bottom-color:
+rgb(0, 0, 0);
+border-bottom-right-radius:
+8px
+;
+border-top-right-radius: 8px;
+font-weight: 700;
+font-size:16px;
+color: #FFF;
+
+}
+
+.pinTitleForDisplay{
+    margin-top: 25%;
+    font-weight: 700;
+font-size: 25px;
+color: #333;
 }

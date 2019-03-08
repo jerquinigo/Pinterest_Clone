@@ -31,6 +31,14 @@ handleChange = (event) => {
     })
   }
 
+  displayPinInfo = () => {
+
+      return (
+        <p className="pinTitleForDisplay">{this.props.pin.title}</p>
+      )
+
+  }
+
   onSubmitDropDown = (event) => {
     event.preventDefault()
     debugger
@@ -64,11 +72,11 @@ console.log(parseInt(this.props.match.params.id), "THE USER BOARD IDDDDD")
           <div className="mainImageDiv">
             <div className="imageButtonContainer">
               <div className="imageInputButtons" >
-              <select onChange={this.handleChange}>
+              <select className="selectDropDown" onChange={this.handleChange}>
                 <option >Select Board</option>
                 {this.displayDropDownMenu()}
               </select>
-              <button onClick={this.onSubmitDropDown}>Save</button>
+              <button className="saveButton" onClick={this.onSubmitDropDown}>Save</button>
             </div>
           </div>
             <div className="imageContainer">
@@ -80,7 +88,7 @@ console.log(parseInt(this.props.match.params.id), "THE USER BOARD IDDDDD")
                 />
               </div>
               <div className="sideBarDiv">
-                <p>hello world</p>
+                <p>{this.displayPinInfo()}</p>
               </div>
             </div>
           </div>

@@ -39,10 +39,13 @@ class UserProfile extends Component {
   }
 
   displayEmailAsUserName = () => {
-    return window.localStorage.token.substring(
+    let username = window.localStorage.token.substring(
       0,
       window.localStorage.token.lastIndexOf("@")
     );
+    return(
+      <p className="titleUserName">{username}</p>
+    )
   };
 
   handleChange = event => {

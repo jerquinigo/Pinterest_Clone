@@ -1,6 +1,7 @@
 .pinDisplayBlackBackground{
   background: url(../frontendResources/transpBlack25.png);
   z-index: -2;
+
 }
 
 .pinFormContainer{
@@ -17,6 +18,17 @@ min-width: 100%;
   border-radius: 16px;
   margin-top: 10px;
   margin-bottom: 10px;
+
+
+}
+.titleUserName{
+  font-weight: 700;
+  font-size:36px;
+  color: #333;
+}
+
+.displayUserName{
+padding-bottom:100px;
 
 }
 
