@@ -1,34 +1,30 @@
-import React, {Component} from 'react';
-import '../css/DisplayUsersBoards.css'
-import { Link } from 'react-router-dom';
-import DisplayBoardItemsContainer from "./DisplayBoardItemsContainer.js"
+import React, { Component } from "react";
+import "../css/DisplayUsersBoards.css";
+import { Link } from "react-router-dom";
+import DisplayBoardItemsContainer from "./DisplayBoardItemsContainer.js";
 
-
-
-class DisplayUsersBoards extends Component{
-  constructor(props){
-    super(props)
-
+class DisplayUsersBoards extends Component {
+  constructor(props) {
+    super(props);
   }
 
-  componentDidMount(){
-    let id = this.props.match.params.id
+  componentDidMount() {
+    let id = this.props.match.params.id;
 
-    this.props.fetchAllBoardsforOneUser(id)
-    this.props.fetchAllPins()
+    this.props.fetchAllBoardsforOneUser(id);
+    this.props.fetchAllPins();
   }
 
- displayUsersBoards = () => {
-   let boardList = Object.values(this.props.boards)
+  displayUsersBoards = () => {
+    let boardList = Object.values(this.props.boards);
     return boardList.map(board => {
-     return (
-       <Link to={`/${window.localStorage.token}/boards/${board.id}`}>
-         <DisplayBoardItemsContainer board={board}/>
-       </Link>
-     )
-    })
-   }
-
+      return (
+        <Link to={`/${window.localStorage.token}/boards/${board.id}`}>
+          <DisplayBoardItemsContainer board={board} />
+        </Link>
+      );
+    });
+  };
 
   // displayBoardItem = () => {
   //   // debugger;
@@ -50,23 +46,17 @@ class DisplayUsersBoards extends Component{
   //   return <div className="board-item-imgs">{imgs}</div>
   // }
 
-
-  render(){
-
+  render() {
     // console.log(this.props.allBoards, "THIS IS ALL THE BOARDS PROPS")
-    console.log(this.props.boards, "the BOARDS FOR THE BOARDS IN THE USER PROF")
-    console.log(this.props.pins,"the PINS FOR THE BOARDS IN THE USER PROF")
+    // console.log(this.props.boards, "the BOARDS FOR THE BOARDS IN THE USER PROF")
+    // console.log(this.props.pins,"the PINS FOR THE BOARDS IN THE USER PROF")
 
-    return(
+    return (
       <div className="displayUsersBoardsPage">
-      <div className="displayUsersContainer">
-        {this.displayUsersBoards()}
+        <div className="displayUsersContainer">{this.displayUsersBoards()}</div>
       </div>
-
-      </div>
-    )
+    );
   }
 }
-
 
 export default DisplayUsersBoards;

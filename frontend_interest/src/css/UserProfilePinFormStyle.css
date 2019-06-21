@@ -149,5 +149,6 @@ object-fit: cover;
    position: absolute;
    height: 484px;
    z-index: 1;
+   opacity: 0;
    /* top: 0px; */
 }

@@ -27,7 +27,7 @@
 .imageInputButtons{
   width: 896px;
   height:40px;
-  background-color: #ffe1e6;
+  background-color: #FFF;
   margin-left: auto;
   margin-right:auto;
   display: flex;
@@ -45,7 +45,7 @@ border-top-right-radius: 10px;
 
 .imageContainer{
   width:896px;
-  background-color: #ffe1e6;
+  background-color: #FFF;
   min-height:100%;
   margin-left: auto;
 margin-right: auto;

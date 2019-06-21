@@ -46,6 +46,14 @@
   align-items: center;
 }
 
+.searchBoxDiv:focus-within {
+  border: 3px solid rgba(49, 156, 249, 0.5);
+}
+
+.searchBoxDiv input {
+  outline: none;
+}
+
 .searchBoxDiv {
   display: flex;
   align-items: center;

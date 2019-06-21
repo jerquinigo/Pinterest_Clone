@@ -41,6 +41,9 @@ handleChange = (event) => {
 
   onSubmitDropDown = (event) => {
     event.preventDefault()
+    this.setState({
+      submitted: true
+    })
     debugger
     let pinData = {
       title: this.props.pin.title,
@@ -89,6 +92,7 @@ console.log(parseInt(this.props.match.params.id), "THE USER BOARD IDDDDD")
               </div>
               <div className="sideBarDiv">
                 <p>{this.displayPinInfo()}</p>
+                {this.state.submitted ? <p>added pin to board</p> : null}
               </div>
             </div>
           </div>

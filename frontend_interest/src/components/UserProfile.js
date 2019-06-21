@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import NavBarContainer from "./NavBarContainer.js";
 // import DisplayUsersBoards from "./DisplayUsersBoards.js"
 import addButton from "../frontendResources/addIcon.jpg";
-import DisplayUsersBoardsContainer from "./DisplayUsersBoardsContainer.js"
+import DisplayUsersBoardsContainer from "./DisplayUsersBoardsContainer.js";
 import "../css/UserProfile.css";
 import "../css/UserProfilePinFormStyle.css";
 
@@ -43,9 +43,7 @@ class UserProfile extends Component {
       0,
       window.localStorage.token.lastIndexOf("@")
     );
-    return(
-      <p className="titleUserName">{username}</p>
-    )
+    return <p className="titleUserName">{username}</p>;
   };
 
   handleChange = event => {
@@ -97,34 +95,32 @@ class UserProfile extends Component {
   togglePinBlackBackground = () => {
     this.setState({
       pinBackgroundBlack: !this.state.pinBackgroundBlack
-    })
-  }
+    });
+  };
 
   handleBackgroundCreateBoardOnclick = event => {
     this.toggleBlackBackground();
     this.createBoardOnClick(event);
   };
 
-  handlePinBackgroundCreateBoardOnclick = (event) => {
-    this.togglePinBlackBackground()
-    this.createPinOnClick(event)
-  }
+  handlePinBackgroundCreateBoardOnclick = event => {
+    this.togglePinBlackBackground();
+    this.createPinOnClick(event);
+  };
 
-
-  dragAndDropFile = (event) => {
-
-    let file = event.target.files[0]
+  dragAndDropFile = event => {
+    let file = event.target.files[0];
     let fileReader = new FileReader();
     fileReader.addEventListener("load", () => {
       this.setState({
         pinurl: fileReader.result
-      })
-    })
+      });
+    });
 
-    if(file){
-      fileReader.readAsDataURL(file)
+    if (file) {
+      fileReader.readAsDataURL(file);
     }
-  }
+  };
 
   displayCreateBoardAndPin = () => {
     if (this.state.addFeature) {
@@ -142,7 +138,9 @@ class UserProfile extends Component {
                 </li>
               </div>
               <div className="ListTwoItem">
-                <li onClick={this.handlePinBackgroundCreateBoardOnclick}>create pin</li>
+                <li onClick={this.handlePinBackgroundCreateBoardOnclick}>
+                  create pin
+                </li>
               </div>
             </ul>
           </div>
@@ -230,17 +228,23 @@ class UserProfile extends Component {
             <div className="SubmitAndCancelDiv">
               <br />
               {this.state.addedPin ? <h3>added a photo to website</h3> : null}
-              <button class="formButton" type="submit">Cancel</button>
-              <button class="formButton" onClick={this.onSubmitPinForm} type="submit">
+              <button class="formButton" type="submit">
+                Cancel
+              </button>
+              <button
+                class="formButton"
+                onClick={this.onSubmitPinForm}
+                type="submit"
+              >
                 Save
               </button>
             </div>
             <div className="FormDiv">
               <div className="theFormContainer">
                 <form className="formTagToStyle">
-
                   <br />
-                  <input className="inputTitle"
+                  <input
+                    className="inputTitle"
                     onChange={this.handleChange}
                     type="text"
                     value={this.state.pinTitle}
@@ -248,7 +252,8 @@ class UserProfile extends Component {
                     placeholder="Add A Title"
                   />
                   <br />
-                  <input className="inputDescription"
+                  <input
+                    className="inputDescription"
                     onChange={this.handleChange}
                     type="text"
                     value={this.state.pinDescription}
@@ -256,7 +261,8 @@ class UserProfile extends Component {
                     placeholder="Add Description"
                   />
                   <br />
-                  <input className="inputCategory"
+                  <input
+                    className="inputCategory"
                     onChange={this.handleChange}
                     type="text"
                     value={this.state.pinCategory}
@@ -264,7 +270,8 @@ class UserProfile extends Component {
                     placeholder="Add Category"
                   />
                   <br />
-                  <input className="inputUrl"
+                  <input
+                    className="inputUrl"
                     onChange={this.handleChange}
                     type="text"
                     value={this.state.pinurl}
@@ -272,7 +279,11 @@ class UserProfile extends Component {
                     placeholder="add image url"
                   />
                   <br />
-                  <select className="dropDownBoardSelector" onChange={this.handleChange} name="user_board_id">
+                  <select
+                    className="dropDownBoardSelector"
+                    onChange={this.handleChange}
+                    name="user_board_id"
+                  >
                     <option>Select Board</option>
                     {this.displayOptionBoardSelectForm()}
                   </select>
@@ -284,11 +295,14 @@ class UserProfile extends Component {
                     className="dragAndDrop"
                     accept="image/*"
                     onChange={this.dragAndDropFile.bind(this)}
-                     />
-                   <img className="dragAndDropImage" src={this.state.pinurl} alt="" />
+                  />
+                  <img
+                    className="dragAndDropImage"
+                    src={this.state.pinurl}
+                    alt=""
+                  />
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -297,8 +311,7 @@ class UserProfile extends Component {
   };
 
   render() {
-
-    console.log(this.state, "the state!!!!!!!!!!!");
+    // console.log(this.state, "the state!!!!!!!!!!!");
     // console.log(this.props, "in props in user profile");
     // console.log(this.props.allBoards, "hunting");
 
@@ -307,33 +320,41 @@ class UserProfile extends Component {
       <div className="userProfilePage">
         <NavBarContainer />
 
-        <div className={this.state.pinBackgroundBlack ? "pinDisplayBlackBackground" : "noBlackBackground"}>
         <div
           className={
-            this.state.backgroundBlack
-              ? "displayBlackBackground"
+            this.state.pinBackgroundBlack
+              ? "pinDisplayBlackBackground"
               : "noBlackBackground"
           }
         >
-          <br />
-          <div className="editButtonsPinBoards">
-            <img
-              onClick={this.onCrossImageClick}
-              className="addButton"
-              src={addButton}
-              alt=""
-            />
-          </div>
-          <div className="displayUserName">
-            {this.displayEmailAsUserName()}
-            {this.displayCreateBoardAndPin()}
-            {this.displayCreateBoardForm()}
-            {this.displayCreatePinForm()}
-            <div className="userBoardContainer">
-              <div className="parentUserBoard" />
+          <div
+            className={
+              this.state.backgroundBlack
+                ? "displayBlackBackground"
+                : "noBlackBackground"
+            }
+          >
+            <br />
+            <div className="editButtonsPinBoards">
+              <img
+                onClick={this.onCrossImageClick}
+                className="addButton"
+                src={addButton}
+                alt=""
+              />
+
+              <i className="fas fa-pen" />
+            </div>
+            <div className="displayUserName">
+              {this.displayEmailAsUserName()}
+              {this.displayCreateBoardAndPin()}
+              {this.displayCreateBoardForm()}
+              {this.displayCreatePinForm()}
+              <div className="userBoardContainer">
+                <div className="parentUserBoard" />
+              </div>
             </div>
           </div>
-        </div>
         </div>
         <DisplayUsersBoardsContainer />
       </div>
