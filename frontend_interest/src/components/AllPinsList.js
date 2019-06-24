@@ -13,18 +13,17 @@ class AllPinsList extends Component {
 
   displayPins = () => {
     let pins = this.props.pins;
-    if (pins) {
-      return pins.map(pin => {
-        return (
-          <div key={pin.id} className="homeMapImageDiv">
-            <Link to={`/pins/${pin.id}`}>
-              {" "}
-              <img className="HomeImages" src={pin.imgurl} alt="" />
-            </Link>
-          </div>
-        );
-      });
-    }
+
+    return pins.map(pin => {
+      return (
+        <div key={pin.id} className="homeMapImageDiv">
+          <Link to={`/pins/${pin.id}`}>
+            {" "}
+            <img className="HomeImages" src={pin.imgurl} alt="" />
+          </Link>
+        </div>
+      );
+    });
   };
   // <DisplayOnePinById id={pin.id} pinurl={pin.imgUrl} />
 
