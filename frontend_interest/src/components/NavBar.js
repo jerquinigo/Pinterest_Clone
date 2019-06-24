@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../frontendResources/InterestHeartlogo.png";
 import "../css/NavBar.css";
 import AllPinsList from "./AllPinsList.js";
+import DisplaySearchResults from "./DisplaySearchResults.js";
 import { withRouter, Link } from "react-router-dom";
 import magnifyingGlass from "../frontendResources/magnifying_glass.png";
 
@@ -10,7 +11,7 @@ class NavBar extends React.Component {
     super();
     this.state = {
       userSearchInput: "",
-      userResults: []
+      searchSwitch: false
     };
   }
   // componentDidMount(){
@@ -42,23 +43,24 @@ class NavBar extends React.Component {
     }
   };
 
-  SearchBarFunction = () => {
-    let userSearch = this.state.userSearchInput;
-    let pins = this.props.pins;
-    if (pins) {
-      return pins.filter(pin => {
-        if (userSearch.toLowerCase() === pin.title) {
-          this.setState({
-            userResults: pin.imgUrl
-          });
-        }
-      });
-    }
-  };
+  // SearchBarFunction = () => {
+  //   let userSearch = this.state.userSearchInput;
+  //   let pins = this.props.pins;
+  //   if (pins) {
+  //     return pins.filter(pin => {
+  //       if (userSearch.toLowerCase() === pin.title) {
+  //         this.setState({
+  //           userResults: pin.imgUrl
+  //         });
+  //       }
+  //     });
+  //   }
+  // };
 
   render() {
     console.log(this.props.pins, "the navBar pin");
     console.log(this.state.userResults, "the input");
+    console.log(this.state.searchSwitch, "searchSwitch");
     // console.log(this.props.currentUser, "NAVBAR!!");
     // if(this.props.currentUser){
     // if(!currentUser) return null
@@ -71,7 +73,12 @@ class NavBar extends React.Component {
         </div>
 
         <div className="navSearchParentDiv">
-          <div className="searchBoxDiv">
+          <div
+            onClick={() =>
+              this.setState({ searchSwitch: !this.state.searchSwitch })
+            }
+            className="searchBoxDiv"
+          >
             <img className="magnifyLogo" src={magnifyingGlass} alt="" />
             <input
               name="userSearchInput"
@@ -102,7 +109,11 @@ class NavBar extends React.Component {
             Log out
           </div>
         </div>
-        <AllPinsList />
+        <DisplaySearchResults
+          userSearchInput={this.state.userSearchInput}
+          pins={this.props.pins}
+          searchSwitch={this.state.searchSwitch}
+        />
       </div>
     );
   }

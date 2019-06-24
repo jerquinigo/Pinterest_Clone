@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Route, Link } from "react-router-dom";
 import DisplayOnePinById from "./DisplayOnePinById.js";
-// import SearchBar from "./Components/SearchBar.js";
+import DisplaySearchResults from "./DisplaySearchResults.js";
 import "../css/AllPinsList.css";
 
 class AllPinsList extends Component {
@@ -43,7 +43,12 @@ class AllPinsList extends Component {
 
   render() {
     console.log(this.props.pins, "the pins at justworks site ");
-    return <div className="parentImageDiv">{this.displayPins()}</div>;
+    return (
+      <div className="parentImageDiv">
+        {this.displayPins()}
+        <DisplaySearchResults />
+      </div>
+    );
   }
 }
 
