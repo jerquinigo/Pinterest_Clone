@@ -21,7 +21,8 @@ app.use(logger("dev"));
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "../frontend_interest/build/")));
+app.use(express.static(path.join(__dirname, "./frontend_interest/build/")));
+// app.use(express.static(path.join(__dirname, "../frontend_interest/build/")));
 //
 // app.get("*", (req, res) => {
 //   res.sendFile(path.join(__dirname + "../frontend_interest/build/index.html"));
@@ -38,8 +39,8 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(express.static(path.join(__dirname, "public")));
-app.use(express.static(path.join(__dirname, "../frontend_interest/build")));
+// app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.static(path.join(__dirname, "../frontend_interest/build")));
 //the routes to use
 app.use("/", indexRouter);
 app.use("/api/users/", usersRouter);
