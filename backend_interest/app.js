@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, "./frontend_interest/build/")));
 // app.use(express.static(path.join(__dirname, "../frontend_interest/build/")));
 //
 // app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname + "../frontend_interest/build/index.html"));
+//   res.sendFile(path.join(__dirname + "./frontend_interest/build/index.html"));
 // });
 
 app.use(
