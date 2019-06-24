@@ -40,7 +40,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(express.static(path.join(__dirname, "public")));
-// app.use(express.static(path.join(__dirname, "../frontend_interest/build")));
+app.use(express.static(path.join(__dirname, "../frontend_interest/build")));
 //the routes to use
 app.use("/", indexRouter);
 app.use("/api/users/", usersRouter);
